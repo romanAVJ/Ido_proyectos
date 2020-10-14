@@ -97,7 +97,7 @@ def meta_ensamble(dist, n, kwargs_ga={}, kwargs_sa={}, iters=10):
         
         # use simulated anealing with the solution of the previous GA
         kwargs_sa['init_state'] = state_ga
-        best_state, best_fit = metaheuristic(times_list, meta=mr.simulated_annealing, 
+        best_state, best_fit = metaheuristic(dist, meta=mr.simulated_annealing, 
                                                  nnodes=n, **kwargs_sa)
         
         #append sols
@@ -150,16 +150,16 @@ def pruebas():
 # MAIN
 # =============================================================================
 # read data
-print('\n============== Problema del agente viajero ======================')
-#### get data
-times_list, lips, prod_lips = times_array('datos_macbelle_dummie.csv', 'tiempos_produccion.csv')
+# print('\n============== Problema del agente viajero ======================')
+# #### get data
+# times_list, lips, prod_lips = times_array('datos_macbelle_dummie.csv', 'tiempos_produccion.csv')
 
-#### metaheuristics
-n = len(lips)
-args_ga = {'mutation_prob': 0.1, 'max_attempts': 20}
-args_sa = {'schedule': mr.ExpDecay(exp_const=0.05)}
+# #### metaheuristics
+# n = len(lips)
+# args_ga = {'mutation_prob': 0.1, 'max_attempts': 20}
+# args_sa = {'schedule': mr.ExpDecay(exp_const=0.05)}
 
-bests, bestf = meta_ensamble(times_list, n, args_ga, args_sa, iters=2)
+# bests, bestf = meta_ensamble(times_list, n, args_ga, args_sa, iters=10)
 
 
 

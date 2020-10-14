@@ -136,16 +136,16 @@ def get_vars(model, n):
 # =============================================================================
 # MAIN
 # =============================================================================
-print('\n============== Programación óptima de producción ======================')
-#### get data
-T_times, lips, prod_lips = times_matrix('datos_macbelle_dummie.csv', 'tiempos_produccion.csv')
+# print('\n============== Programación óptima de producción ======================')
+# #### get data
+# T_times, lips, prod_lips = times_matrix('datos_macbelle_dummie.csv', 'tiempos_produccion.csv')
 
-#### formulation of TSP
-# constant
-k = sum(prod_lips)
+# #### formulation of TSP
+# # constant
+# k = sum(prod_lips)
 
-# tsp
-TSP(T_times, k, lips)
+# # tsp
+# TSP(T_times, k, lips)
 
-print('\nbye 👋')
+# print('\nbye 👋')
 
